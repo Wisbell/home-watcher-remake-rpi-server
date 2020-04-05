@@ -8,6 +8,7 @@ import { Injectable } from '@nestjs/common';
 export class SecurityService {
 
   private securityAppProcess;
+  private pathToHomeWatcherCameraApp
 
   startSecurity(): boolean {
     try {
@@ -17,7 +18,8 @@ export class SecurityService {
       // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/child.js`);
 
       // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/app.js`);
-      this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/child.js`);
+      // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/child.js`);
+      this.securityAppProcess = childProcess.fork(`/home/pi/Home-Watcher-remake-PI/app.js`);
 
       this.securityAppProcess.on('exit', function (code, signal) {
         console.log(`child process exited with code ${code} and signal ${signal}`);
@@ -46,6 +48,7 @@ export class SecurityService {
       // process.kill(process.pid, 'SIGTERM')
 
       this.securityAppProcess.kill();
+      this.securityAppProcess = null;
 
       console.log('Security app has successfully been stopped');
 
