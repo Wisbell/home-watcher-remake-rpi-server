@@ -4,6 +4,7 @@ import { SecurityController } from './security.controller';
 
 @Module({
   providers: [SecurityService],
-  controllers: [SecurityController]
+  controllers: [SecurityController],
+  exports: [SecurityService]
 })
 export class SecurityModule {}
