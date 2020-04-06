@@ -14,15 +14,10 @@ export class SecurityService {
     try {
       console.log('Starting security app');
 
-      // this.securityAppProcess = childProcess.spawn('node', ['/c/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/app']);
-      // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/child.js`);
-
-      // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/app.js`);
-      // this.securityAppProcess = childProcess.fork(`C:/Users/coolw/resumeProjects/home-watcher-remake/test_child_process/child.js`);
       this.securityAppProcess = childProcess.fork(`/home/pi/Home-Watcher-remake-PI/app.js`);
 
       this.securityAppProcess.on('exit', function (code, signal) {
-        console.log(`child process exited with code ${code} and signal ${signal}`);
+        console.log(`Camera child process exited with code ${code} and signal ${signal}`);
       });
 
       this.securityAppProcess.on('message', (msg) => {
