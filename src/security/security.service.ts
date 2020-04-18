@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common';
 export class SecurityService {
 
   public securityAppProcess = null;
-  private pathToHomeWatcherCameraApp = `/home/pi/Home-Watcher-remake-PI/app.js`;
+  private pathToHomeWatcherCameraApp = `/home/pi/home-watcher-remake-pi/app.js`;
 
   startSecurity(): boolean {
     try {
