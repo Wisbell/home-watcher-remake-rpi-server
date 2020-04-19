@@ -16,12 +16,16 @@ export class SecurityService {
 
       this.securityAppProcess.on('exit', function (code, signal) {
         console.log(`Camera child process exited with code ${code} and signal ${signal}`);
+        this.securityAppProcess = null;
       });
 
+      // TODO: This will probably be used during failed start ups.
+      //        Make it work or delete it
       this.securityAppProcess.on('message', (msg) => {
         console.log('Message from child', msg);
       });
 
+      // TODO: Only show this if succesful start up
       console.log('Security app has successfully been started');
 
       return true;
