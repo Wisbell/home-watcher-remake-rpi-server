@@ -1,6 +1,6 @@
 # Home Watcher - Raspberry Pi Server
 
-<p align="center">A <a href="http://nodejs.org" target="blank">Node.js</a> server created with <a href="https://nestjs.com/" target="blank">Nest JS</a> to interface with the <a href="https://github.com/Wisbell/home-watcher-remake-pi" target="blank">Home Watcher Raspberry Pi Application</a></p>
+<p align="center">A <a href="http://nodejs.org" target="_blank">Node.js</a> server created with <a href="https://nestjs.com/" target="blank">Nest JS</a> to interface with the <a href="https://github.com/Wisbell/home-watcher-remake-pi" target="blank">Home Watcher Raspberry Pi Application</a></p>
 
 ## Description
 
