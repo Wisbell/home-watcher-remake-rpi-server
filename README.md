@@ -13,7 +13,7 @@ $ npm install
 ```
 
 ## Running the app
-**Both this server and the <a href="https://github.com/Wisbell/home-watcher-remake-pi" target="blank">Home Watcher Raspberry Pi Application</a> should be cloned in the same directory in order for the server to run.  The dependencies for the Home Watcher App should be installed as well before running the server.**
+**<p>Both this server and the <a href="https://github.com/Wisbell/home-watcher-remake-pi" target="blank">Home Watcher Raspberry Pi Application</a> should be cloned in the same directory in order for the server to run.  The dependencies for the Home Watcher App should be installed as well before running the server.</p>**
 
 ```bash
 # Commands must be run as root user in order for the
@@ -30,6 +30,25 @@ $ sudo npm run start:dev
 # NOTE: Run 'npm run build' before running production
 # production mode
 $ sudo npm run start:prod
+```
+
+**Note: After Starting the app the production front end requires a secure (https) host/url to contact the server.  This can be done using <a href="https://github.com/bubenshchykov/ngrok#readme" target="blank">Ngrok</a> which can easily expose localhost to the web.**
+
+```bash
+npm install ngrok -g
+ngrok http 8080
+# For global install on Linux, you might need to run sudo npm install --unsafe-perm -g ngrok due to the nature of npm postinstall script.
+# Example Response
+# Session Status                online
+# Session Expires               7 hours, 59 minutes
+# Version                       2.3.35
+# Region                        United States (us)
+# Web Interface                 http://127.0.0.1:4040
+# Forwarding                    http://2d72d5c3.ngrok.io -> http://localhost:3000
+# Forwarding                    https://2d72d5c3.ngrok.io -> http://localhost:3000
+
+# Connections                   ttl     opn     rt1     rt5     p50     p90
+#                               0       0       0.00    0.00    0.00    0.00
 ```
 
 ### Endpoints
