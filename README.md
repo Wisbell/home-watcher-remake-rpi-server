@@ -35,10 +35,14 @@ $ sudo npm run start:prod
 **Note: After Starting the app the production front end requires a secure (https) host/url to contact the server.  This can be done using <a href="https://github.com/bubenshchykov/ngrok#readme" target="blank">Ngrok</a> which can easily expose localhost to the web.**
 
 ```bash
-npm install ngrok -g
-ngrok http 8080
-# For global install on Linux, you might need to run sudo npm install --unsafe-perm -g ngrok due to the nature of npm postinstall script.
-# Example Response
+$ npm install ngrok -g
+$ ngrok http 8080
+# For global install on Linux, you might need to run sudo npm install --unsafe-perm -g ngrok
+# due to the nature of npm postinstall script.
+
+# -> Example ngrok response
+# -> Copy the https url to add to # front end configuration
+
 # Session Status                online
 # Session Expires               7 hours, 59 minutes
 # Version                       2.3.35
